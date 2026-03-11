@@ -44,7 +44,7 @@ public class metodos_Ej5 {
 
         }
         sumsin = sumtotal - temperaturaMayor(temperaturas) - temperaturaMenor(temperaturas);
-        double mediaRedondeada = sumsin / temperaturas.length-2;
+        double mediaRedondeada = sumsin / (temperaturas.length-2);
          mediaRedondeada = Math.round(mediaRedondeada * 100.0) / 100.0;
         return mediaRedondeada;
     }
@@ -92,6 +92,17 @@ public class metodos_Ej5 {
         return temperaturaMenor;
     }
 
+
+    public static int temperaturasSobreMedia(double[] temperaturas) {
+
+        double media = mediaTemperaturas(temperaturas);
+        int contador = 0;
+        for (double t : temperaturas) {
+            if (t > media) contador++;
+        }
+
+        return contador;
+    }
 }
 
 
