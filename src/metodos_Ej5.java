@@ -25,6 +25,10 @@ public class metodos_Ej5 {
         double[] temperaturas = new double[10];
         rellenar(temperaturas);
         mostrar(temperaturas);
+        System.out.println();
+        System.out.println("La temperatura mayor es: " + temperaturaMayor(temperaturas));
+        System.out.println();
+        System.out.println("La temperatura menor es: " + temperaturaMenor(temperaturas));
     }
 
     private static void mostrar(double[] temperaturas) {
@@ -46,11 +50,18 @@ public class metodos_Ej5 {
     public static double temperaturaMayor(double[] datos) {
         double temperaturaAlta = datos[0];
         for (int i = 0; i < datos.length; i++) {
-            if(datos[i]>temperaturaAlta) temperaturaAlta = datos[i];
+            if (datos[i] > temperaturaAlta) temperaturaAlta = datos[i];
         }
         return temperaturaAlta;
     }
 
+    public static double temperaturaMenor(double[] datos) {
+        double temperaturaMenor = datos[0];
+        for (int i = 0; i < datos.length; i++) {
+            if (datos[i] < temperaturaMenor) temperaturaMenor = datos[i];
+        }
+        return temperaturaMenor;
+    }
 }
 
 
