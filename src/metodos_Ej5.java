@@ -29,6 +29,19 @@ public class metodos_Ej5 {
         System.out.println("La temperatura mayor es: " + temperaturaMayor(temperaturas));
         System.out.println();
         System.out.println("La temperatura menor es: " + temperaturaMenor(temperaturas));
+        System.out.println();
+        System.out.println("La media de las temperaturas es " + mediaTemperaturas(temperaturas));
+
+    }
+
+    private static double mediaTemperaturas(double[] temperaturas) {
+        double media = 0.0;
+        double totalSumatemperaturas = 0.0;
+        for (int i = 0; i < temperaturas.length; i++) {
+            totalSumatemperaturas += temperaturas[i];
+        }
+        media = totalSumatemperaturas / temperaturas.length;
+        return media;
     }
 
     private static void mostrar(double[] temperaturas) {
@@ -62,6 +75,7 @@ public class metodos_Ej5 {
         }
         return temperaturaMenor;
     }
+
 }
 
 
