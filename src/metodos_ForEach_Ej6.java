@@ -16,8 +16,11 @@ import static java.lang.Math.random;
  * (CarreraCaballosArray
  */
 public class metodos_ForEach_Ej6 {
+
+    final static int META = 20;
+
     public static void main(String[] args) {
-        final int caballoGanador = 20;
+
         boolean carreraTerminada = false;
         int[] caballos = new int[leerNumeroCaballos()];
 
@@ -26,9 +29,29 @@ public class metodos_ForEach_Ej6 {
             generarCaballoAvanza(caballos);
             limpiar();
             carreraTerminada = finalizarCarrera(caballos);
+            mostrarTodosLosCaballos(caballos);
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+            }
         }
+        generarCaballoGanador(caballos);
+
+    }
+
+    private static void mostrarTodosLosCaballos(int[] caballos) {
+
+        for (int i = 0; i < caballos.length; i++) {
+            System.out.print("Caballo " + i + ": ");
 
 
+            for (int j = 0; j < caballos[i]; j++) {
+                System.out.print("*");
+            }
+
+
+            System.out.println();
+        }
     }
 
     private static boolean finalizarCarrera(int[] caballos) {
@@ -53,4 +76,11 @@ public class metodos_ForEach_Ej6 {
         return in.leerInt("Leer Numero de caballos: ", v -> v >= 2);
     }
 
+    public static void generarCaballoGanador(int[] caballo) {
+        for (int i = 0; i < caballo.length; i++) {
+            if (caballo[i] >= META) System.out.println("El caballo ganador es: " + i);
+
+        }
+
+    }
 }
